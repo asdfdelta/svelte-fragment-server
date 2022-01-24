@@ -1,0 +1,36 @@
+@import '../theme/_theme';
+
+.header-search {
+    display: flex;
+    height: 38px;
+    line-height: 20px;
+    position: relative;
+    background-color: $white;
+    border: 1px solid $mercury;
+    border-radius: 20px;
+    color: $nobel;
+    margin: 0 38px;
+    flex-shrink: 1;
+    bottom: 3px;
+    box-sizing: border-box;
+
+    form {
+        border: none;
+        margin-bottom: 0;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    :global(#search-icon) {
+        width: 15px;
+        height: 15px;
+    }
+
+    :global(#search-icon .a) {
+        fill: $dove-gray !important;
+    }
+}
+
+.visually-hidden {
+    display: none;
+}

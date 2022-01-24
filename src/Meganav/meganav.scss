@@ -1,0 +1,168 @@
+@import '../theme/_theme';
+
+nav[role='navigation'] {
+    box-sizing: border-box;
+    background-color: $white;
+    left: -100%;
+    margin-top: 0;
+    position: absolute;
+    width: 100%;
+    max-width: 375px;
+    top: 0;
+    overflow-y: auto;
+    padding: 20px 0 0;
+    z-index: $zindex-fixed;
+    padding-top: 0;
+}
+
+.menu-category {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+
+    a {
+        color: $dove-gray;
+        background: $white;
+        display: block;
+        padding: 0.9rem 0.5rem;
+        width: auto;
+        text-decoration: none;
+        transition: font-weight 0.3s;
+    }
+
+    li a {
+        transition: background-color 0.3s, color 0.3s;
+        opacity: 1;
+        padding: 0.625rem 1.25rem;
+    }
+
+    .back-link {
+        font-size: 0.875rem;
+        font-weight: 700;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+    }
+
+    .menu-col {
+        padding-right: 3rem;
+    }
+
+    :global(li) {
+        list-style: none;
+        padding-bottom: 0;
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    %display-menu {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        opacity: 1;
+        text-align: left;
+        z-index: $zindex-fixed;
+    }
+
+    nav[role='navigation'] {
+        max-width: unset;
+        padding: 0 1.25rem 0.3125rem;
+        position: static;
+    }
+
+    .menu-category {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+        -ms-flex-align: center;
+        align-items: center;
+        max-width: 1280px;
+        margin: auto;
+
+        li a {
+            padding: 0.625rem 0;
+        }
+
+        a {
+            color: $black;
+
+            &:hover {
+                font-weight: 600;
+                background-color: transparent;
+            }
+        }
+
+        .back-link {
+            display: none;
+        }
+    }
+
+    :global(.menu-category .level-1) {
+        text-align: center;
+    }
+
+    a[data-level='1'] {
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        &[data-cgid='deals'] {
+            color: $cardinal !important;
+            font-weight: 600;
+        }
+    }
+
+    .level-2 {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s;
+        background-color: $white;
+        border: 1px solid $mercury;
+        border-top: none;
+        position: absolute;
+        top: 200px;
+        left: 1%;
+        padding: 1.25rem 0 2.5rem 2%;
+        min-width: 400px;
+        max-width: 1280px;
+
+        &:hover {
+            @extend %display-menu;
+        }
+
+        .menu-vertical {
+            padding-bottom: 1.25rem;
+            padding-left: 0;
+
+            li a[href='#']:hover,
+            li a[href='javascript:void(0)']:hover {
+                font-weight: 600;
+                color: $black;
+                cursor: default;
+            }
+        }
+
+        :global(& > ul) {
+            padding: 0;
+        }
+    }
+
+    a[data-level='1']:hover + .level-2 {
+        @extend %display-menu;
+    }
+
+    a.main-category {
+        @include font-weight('semi-bold');
+        padding: 0;
+        font-size: 0.875rem;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    .level-2 a:not(.main-category):hover {
+        text-decoration: underline;
+        font-weight: 700;
+    }
+}

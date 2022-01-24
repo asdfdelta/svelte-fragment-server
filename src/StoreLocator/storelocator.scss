@@ -1,0 +1,73 @@
+@import '../theme/_theme';
+
+.header-local-pricing {
+    * {
+        @include font-weight('normal');
+        box-sizing: border-box;
+        line-height: 16px;
+    }
+
+    .local-pricing-label {
+        color: $nobel;
+        font-size: 13px;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        top: 2px;
+
+        &.hours {
+            color: $black;
+            top: -2px;
+        }
+    }
+
+    .local-pricing-zip-code {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: bold;
+        position: relative;
+        bottom: 3px;
+    }
+
+    .js-local-pricing-link {
+        display: inline-block;
+        font-size: 13px;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+
+        :global(#arrow-left-icon) {
+            display: inline-block;
+            position: relative;
+            top: 4px;
+            width: 15px;
+            height: 15px;
+            transform: rotate(270deg);
+            margin-left: 9px;
+            cursor: pointer;
+            fill: $dove-gray;
+        }
+
+        :global(.close) {
+            @include transparent-background;
+        }
+    }
+
+    :global(.toggle-modal) {
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        border-width: 0;
+        background-color: transparent;
+        color: transparent;
+        appearance: none;
+    }
+
+    :global(.bg) {
+        background: $locator-shade !important;
+    }
+}

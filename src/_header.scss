@@ -1,0 +1,82 @@
+@import './theme/_theme';
+
+.top-banner-container {
+    display: flex;
+    width: 100%;
+    @include font-weight('normal');
+}
+.top-banner {
+    position: relative;
+    transition: left 0.2s ease-in;
+    height: auto;
+    z-index: $zindex-modal;
+
+    :global(.level-1) {
+        margin-left: 2px;
+    }
+
+    :global(.has-sub-menu) {
+        font-size: 14px;
+        @include font-weight('normal');
+        line-height: 18px;
+        padding: 10px 0 !important;
+        margin-right: 16px;
+    }
+
+    //need padding for mouse hover from menu to sub-menu work smoothly
+    :global(.has-sub-menu > span) {
+        padding-bottom: 15px;
+    }
+
+    :global(#mini-cart) {
+        position: relative;
+        bottom: 3px;
+    }
+
+    :global(.menu-utility-user) {
+        position: relative;
+        bottom: 3px;
+    }
+
+    :global(.header-local-pricing) {
+        margin-left: 16px;
+        position: relative;
+        bottom: 3px;
+        right: 1px;
+    }
+
+    :global(.header-search) {
+        flex-grow: 2;
+    }
+}
+
+.header-container {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+    align-items: center;
+    padding: 30px 0 14px 0;
+    position: relative;
+}
+
+.main-nav {
+    border-top: 1px solid $mercury;
+    line-height: 20px;
+    position: static;
+}
+
+#header-overlay {
+    display: block;
+    width: 100vw;
+    background-color: $black;
+    opacity: 0;
+    z-index: $zindex-zero;
+    position: absolute;
+    transition: all 0.5s;
+    max-width: 100%;
+
+    &.active {
+        z-index: $zindex-modal-backdrop;
+        opacity: 0.25;
+    }
+}

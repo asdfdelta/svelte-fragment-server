@@ -1,0 +1,31 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "rollup -c",
+    "dev-build": "rollup -c -w",
+    "dev-server": "nodemon ./src/server.js",
+    "start": "npm run dev-build & npm run dev-server"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "node-static": "^0.7.11",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-chunks": "^2.0.3",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "sass": "^1.43.4",
+    "svelte": "^3.44.1",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "ashcomm-core-svelte": "latest",
+    "sirv-cli": "^1.0.0",
+    "svelte-preprocess": "^4.9.8"
+  }
+}

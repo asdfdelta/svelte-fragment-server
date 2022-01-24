@@ -1,0 +1,135 @@
+@import '../theme/_theme';
+
+#LocalPricingDialog {
+    line-height: 16px;
+    font-size: 12px;
+
+    * {
+        @include font-weight('normal');
+    }
+
+    form {
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 0;
+
+            h4 {
+                font-size: 13px;
+                margin-bottom: 3.9px;
+                margin-block-end: 3.9px;
+            }
+
+            #zipcodeentry_postal-label {
+                display: none;
+            }
+
+            .field-wrapper {
+                box-sizing: border-box;
+                float: left;
+                padding: 0;
+                margin: 0;
+                max-width: 250px;
+                width: 60%;
+
+                input {
+                    box-sizing: border-box;
+                    padding: 0 10px;
+                    border: 1px solid $mercury;
+                    border-radius: 0;
+                    width: 100%;
+                    height: 32px;
+                    font-size: 12px;
+                    font-size: 0.75rem;
+                    text-indent: 0;
+                    color: $black;
+                    background-color: $white;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+            .form-row-button {
+                float: left;
+                padding: 0;
+                margin: 0;
+                clear: none;
+                width: 40%;
+
+                :global(Button) {
+                    width: 100%;
+                    padding: 9px 8px 10px;
+                    border: none;
+                    font-weight: 400;
+                    margin: 0;
+                    border-radius: 0;
+                    display: block;
+                    background-color: $tuatara;
+                    color: $white;
+                    font-size: 13px;
+                    max-width: 100%;
+                    text-align: center;
+                    text-transform: none;
+                    letter-spacing: 0;
+                    min-height: 0;
+                    box-sizing: border-box;
+                    line-height: 1em;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .closest-store-heading {
+        p {
+            font-size: 13px;
+            font-weight: 600;
+        }
+    }
+    .closest-store-address-text {
+        font-size: 13px;
+        line-height: 25px;
+    }
+    .closest-store-phone {
+        margin: 15px 0;
+        font-size: 13px;
+        line-height: 25px;
+    }
+    .closest-store-hours {
+        h3 {
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 16px;
+            text-transform: uppercase;
+        }
+    }
+    .closest-store-links {
+        display: flex;
+        justify-content: space-between;
+
+        .redesign-button {
+            display: block;
+            background-color: $tuatara;
+            color: $white;
+            font-size: 13px;
+            padding: 10px 8px;
+            max-width: 100%;
+            text-align: center;
+            margin-top: 15px;
+            text-transform: none;
+            letter-spacing: 0;
+            min-height: 0;
+            border-radius: 4px;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: 2px solid $tuatara;
+            line-height: 1em;
+
+            &:hover {
+                background-color: $suva-gray;
+                border-color: $suva-gray;
+            }
+        }
+    }
+}
